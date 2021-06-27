@@ -16,7 +16,7 @@ Each dot represents a physical book. There are many limitations to this approach
 
 ## Words and bigrams
 
-Words included in the dataset are words that appear at least four times over the entire data set.
+Words included in the dataset are words that appear at least five times over the entire data set.
 
 Running the tool locally, you can load a dataset containing words and bigrams.
 
