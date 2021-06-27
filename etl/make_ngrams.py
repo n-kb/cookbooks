@@ -35,7 +35,7 @@ common_words = [
 with open("data/meta/cookbooks.csv") as cookbooks_file:
 	cookbooks = csv.DictReader(cookbooks_file)
 	for row in cookbooks:
-		if row["cur_status"] != "words":
+		if row["cur_status"] != "wordsx":
 
 			# Opens cookbook
 			print(row["filename"])
@@ -52,13 +52,13 @@ with open("data/meta/cookbooks.csv") as cookbooks_file:
 				s = s.replace("\n", " ")
 
 				# Makes ngram
-				tokens = [token for token in s.split(" ") if token != ""]
-				output = list(nltkngrams(tokens, 2))
+				#tokens = [token for token in s.split(" ") if token != ""]
+				#output = list(nltkngrams(tokens, 2))
 				
 				# Adds single words and removes apostrophes
 				s = re.sub(r'[\']', ' ', s)
 				single_words = [token for token in s.split(" ") if token != ""]
-				output += single_words
+				output = single_words
 
 				ngrams = pd.Series(output)
 
@@ -73,7 +73,7 @@ with open("data/meta/cookbooks.csv") as cookbooks_file:
 				df['frequency'] = df['count'] / df['total_words']
 
 				# Saves to file
-				df.to_csv("data/ngrams/" + row["filename"])
+				df.to_csv("data/words/" + row["filename"])
 			
 			except FileNotFoundError:
 				pass
