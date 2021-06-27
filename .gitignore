@@ -1,0 +1,12 @@
+.~*
+.ipynb_checkpoints
+__pycache__
+pdfs
+text
+text_clean
+tmp
+FR.csv
+cookbooks.old.ods
+langid.py
+data.ngrams.csv
+ngrams
