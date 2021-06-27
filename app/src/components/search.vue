@@ -17,9 +17,10 @@
       </a>
     </div>
   </div>
-  <div class="notification is-danger" v-if="error">
+  <div class="notification is-danger content" v-if="error">
     <button class="delete" @click="error = false"></button>
-    There was an error: {{errorMessage}}
+    <p>There was an error: {{errorMessage}}.</p>
+    <p>Please reload the page.</p>
   </div>
 </template>
 

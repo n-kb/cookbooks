@@ -5,6 +5,7 @@
   </div>
   <div id="viz" ref="viz" :class="{'invisible': isLoading}">
   </div>
+  <p :class="{'invisible': isLoading}">{{legend}}.</p>
 </template>
 
 <script>
@@ -14,7 +15,8 @@ export default {
   props: ['results', 'isLoading'],
   data() {
     return {
-      noResults: false
+      noResults: false,
+      legend: ""
     }
   },
   watch : {
@@ -25,6 +27,7 @@ export default {
   methods: {
     makeViz(results)
     {
+      this.legend = "Frequency of the words " + results.query.join(", ") + " (aggregated) in " + results.aggregate_results.length + " cookbooks"
 
       var el_w = this.$refs.viz.clientWidth;
       
