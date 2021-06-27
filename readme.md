@@ -2,6 +2,8 @@
 
 Search for word frequencies in a corpus of cookbooks published in France and Germany from 1800 to 1940.
 
+There is some debate among linguists regarding the usefulness of quantitative text analysis, but comparisons of word frequencies across time are ultimately a very appropriate way to back up claims made otherwise (Gavin, 2020).
+
 ## Corpus
 
 The corpus currently contains 296 cookbooks sourced from Gallica, Archive.org, Katalog Plus of Freiburg University and the Wienbibliothek. The complete list is available under `data/meta/cookbooks.csv`.
@@ -19,6 +21,8 @@ Each dot represents a physical book. There are many limitations to this approach
 Words included in the dataset are words that appear at least five times over the entire data set.
 
 Running the tool locally, you can load a dataset containing words and bigrams.
+
+Single letters and special characters, many of which are the result of faulty OCR, were removed prior to the tokenization. Common words were left in the data set, as it would be difficult to find a way to remove common words that is coherent in both French and German.
 
 ## Trendline
 
@@ -40,7 +44,9 @@ For each book, a random sample of 200 lines was analyzed by [langid](https://git
 
 Baumann, Ryan. [Automatic evaluation of OCR quality](https://ryanfb.github.io/etc/2015/03/16/automatic_evaluation_of_ocr_quality.html). /etc (blog), 16 Mar 2015.
 
-Coydon, Eva. "Les auteures allemandes de livres de cuisine (1800-1914)." Le Temps des medias 1, 2015, p. 117-130.
+Coydon, Eva. "Les auteures allemandes de livres de cuisine (1800-1914)." _Le Temps des médias_ 1, 2015, p. 117-130.
+
+Gavin, Michael. "Is there a text in my data?(Part 1): on counting words." _Journal of Cultural Analytics_ 1.1 (2020): 11830.
 
 Lui, Marco and Timothy Baldwin [Cross-domain Feature Selection for Language Identification](http://www.aclweb.org/anthology/I11-1062), In _Proceedings of the Fifth International Joint Conference on Natural Language Processing (IJCNLP 2011)_, Chiang Mai, Thailand, 2011, p. 553—561.
 
